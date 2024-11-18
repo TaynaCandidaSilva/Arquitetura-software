@@ -1,0 +1,5 @@
+{
+    "files.exclude": {
+        "**/Arquitetura-software": true
+    }
+}

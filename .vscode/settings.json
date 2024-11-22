@@ -3,5 +3,11 @@
     "python.linting.pylintEnabled": true,
     "files.exclude": {
         "**/Arquitetura-software": true
-    }
+    },
+    "cSpell.words": [
+        "docparams",
+        "pylint",
+        "pylintrc",
+        "rcfile"
+    ]
 }

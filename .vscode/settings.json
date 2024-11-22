@@ -2,7 +2,12 @@
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "files.exclude": {
-        "**/Arquitetura-software": true
+        "**/Arquitetura-software": true,
+        "**/*.pyc": {
+            "when": "$(basename).py"
+        },
+        "**/__pycache__": true,
+        "**/*.pytest_cache": true
     },
     "cSpell.words": [
         "docparams",

@@ -1,8 +1,8 @@
-from sqlalchemy import Column, String, BIGINT
 from src.models.sqlite.settings.base import Base
+from sqlalchemy import Column, String, BIGINT
 
 
-class PetTable(Base):
+class PetsTable(Base):
     __tablename__ = "pets"
 
     id = Column(BIGINT, primary_key=True)

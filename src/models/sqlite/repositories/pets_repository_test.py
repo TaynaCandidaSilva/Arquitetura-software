@@ -16,7 +16,7 @@ class MockConnection:
                     [
                         PetsTable(name="dog", type="dog"),
                         PetsTable(name="cat", type="cat"),
-                    ],
+                    ],  # resultado
                 )
             ]
         )

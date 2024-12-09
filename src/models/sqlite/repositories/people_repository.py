@@ -8,7 +8,7 @@ class PeopleRepository(PeopleRepositoryInterface):
     def __init__(self, db_connection) -> None:
         self.__db_connection = db_connection
 
-    def insert_people(
+    def insert_person(
         self, first_name: str, last_name: str, age: int, pet_id: int
     ) -> None:
         with self.__db_connection as database:
@@ -26,11 +26,8 @@ class PeopleRepository(PeopleRepositoryInterface):
         with self.__db_connection as database:
             try:
                 person = (
-                    (
-                        database.session.query(PeopleTable).outerjoin(
-                            PetsTable, PetsTable.id == PeopleTable.pet_id
-                        )
-                    )
+                    database.session.query(PeopleTable)
+                    .join(PetsTable, PetsTable.id == PeopleTable.pet_id)
                     .filter(PeopleTable.id == person_id)
                     .with_entities(
                         PeopleTable.first_name,

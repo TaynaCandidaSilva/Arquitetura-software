@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict  # 3.8
 
 
 class HttpRequest:

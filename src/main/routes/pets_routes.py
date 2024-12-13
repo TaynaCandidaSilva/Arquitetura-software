@@ -1,8 +1,16 @@
 from flask import Blueprint, jsonify
+from src.views.http_types.http_request import HttpRequest
 
-pet_route_bp = Blueprint("pet_route", __name__)
+from src.main.composer.pet_lister_composer import pet_lister_composer
+
+
+pet_route_bp = Blueprint("pet_routes", __name__)
 
 
 @pet_route_bp.route("/pets", methods=["GET"])
 def list_pets():
-    return jsonify({"Ola": "mundo"}), 200
+    http_request = HttpRequest()
+    view = pet_lister_composer()
+    http_response = view.handle(http_request)
+
+    return jsonify(http_response.body), http_response.status_code

@@ -11,6 +11,7 @@
     },
     "cSpell.words": [
         "docparams",
+        "jsonify",
         "Petlister",
         "pylint",
         "pylintrc",
